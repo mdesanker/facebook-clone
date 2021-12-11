@@ -23,6 +23,7 @@ const Greeting = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  // max-width: 50%;
 
   & h1 {
     color: ${({ theme }) => theme.colors.primary};
@@ -41,6 +42,7 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 `;
 
 const LoginWrapper = styled.main`

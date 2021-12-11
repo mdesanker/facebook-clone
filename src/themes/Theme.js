@@ -4,8 +4,8 @@ const Theme = {
     primaryHover: "#1362ca",
     secondary: "#42b72a",
     secondaryHover: "#338e20",
-    lightBackground: "#f0f2f5",
-    mediumBackground: "#e4e6eb",
+    lightGray: "#f0f2f5",
+    mediumGray: "#e4e6eb",
   },
 };
 
