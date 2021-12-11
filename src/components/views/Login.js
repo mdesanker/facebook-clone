@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import styled from "styled-components";
+import Signin from "../auth/SignIn";
 
 const Login = () => {
   return (
@@ -10,6 +11,7 @@ const Login = () => {
             <h1>fakebook</h1>
             <p>Connect with friends and the world around you on Fakebook.</p>
           </Greeting>
+          <Signin />
         </ContentWrapper>
       </LoginWrapper>
       <Footer>mdesanker © 2021</Footer>
