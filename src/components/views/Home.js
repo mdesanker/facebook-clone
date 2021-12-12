@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Header from "../elements/Header";
+import Header from "../elements/header/Header";
 
 const Home = () => {
   return (

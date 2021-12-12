@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import Logo from "./Logo";
+import SearchBtn from "./SearchBtn";
 
 const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderSection>
         <Logo />
+        <SearchBtn />
       </HeaderSection>
     </HeaderWrapper>
   );
@@ -17,6 +19,8 @@ const HeaderSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  margin: 0 16px;
 
   // border: 1px solid red;
 `;

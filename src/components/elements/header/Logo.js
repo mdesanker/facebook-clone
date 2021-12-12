@@ -14,7 +14,6 @@ const LogoWrapper = styled.div`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  margin: 0 16px;
 `;
 
 export default Logo;
