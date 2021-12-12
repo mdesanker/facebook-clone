@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
     <LogoWrapper>
-      <i className="fab fa-facebook" />
+      <Link to="/">
+        <i className="fab fa-facebook" />
+      </Link>
     </LogoWrapper>
   );
 };
@@ -14,6 +17,10 @@ const LogoWrapper = styled.div`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+
+  & a {
+    color: transparent;
+  }
 `;
 
 export default Logo;
