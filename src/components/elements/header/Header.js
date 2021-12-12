@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "./Logo";
+import ProfileTab from "./ProfileTab";
 import SearchBtn from "./SearchBtn";
 
 const Header = () => {
@@ -8,6 +9,9 @@ const Header = () => {
       <HeaderSection>
         <Logo />
         <SearchBtn />
+      </HeaderSection>
+      <HeaderSection>
+        <ProfileTab />
       </HeaderSection>
     </HeaderWrapper>
   );
