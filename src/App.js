@@ -1,4 +1,5 @@
 import React from "react";
+import SignUp from "./components/auth/SignUp";
 import Login from "./components/views/Login";
 import GlobalStyles from "./themes/GlobalStyles";
 
@@ -7,6 +8,7 @@ function App() {
     <div>
       <GlobalStyles />
       <Login />
+      <SignUp />
     </div>
   );
 }
