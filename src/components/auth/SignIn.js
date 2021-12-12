@@ -12,7 +12,12 @@ const Signin = () => {
         <a href="/">Forgot password?</a>
       </SigninWrapper>
       <SignupWrapper>
-        <Button type="button" text="Create New Account" secondary />
+        <Button
+          type="button"
+          text="Create New Account"
+          padding="15px 25px"
+          secondary
+        />
       </SignupWrapper>
     </Card>
   );

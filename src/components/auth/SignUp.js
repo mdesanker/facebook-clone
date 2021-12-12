@@ -60,27 +60,75 @@ const SignUpModal = () => {
             </label>
             <input type="date" id="birthday" name="birthday" required />
           </BirthdayInput>
-          <p>Gender</p>
-          <div>
-            <div>
-              <label htmlFor="female">Female</label>
-              <input type="radio" id="female" name="gender" value="female" />
-            </div>
-            <div>
-              <label htmlFor="male">Male</label>
-              <input type="radio" id="male" name="gender" value="male" />
-            </div>
-            <div>
-              <label htmlFor="custom">Custom</label>
-              <input type="radio" id="custom" name="gender" value="custom" />
-            </div>
-          </div>
-          <Button type="submit" text="Sign Up" secondary />
+          <GenderInput>
+            <p>
+              Gender{" "}
+              <abbr title="You can choose whether to share your gender with other users">
+                <i className="fas fa-question-circle" />
+              </abbr>
+            </p>
+            <RadioWrapper>
+              <div>
+                <label htmlFor="female">Female</label>
+                <input type="radio" id="female" name="gender" value="female" />
+              </div>
+              <div>
+                <label htmlFor="male">Male</label>
+                <input type="radio" id="male" name="gender" value="male" />
+              </div>
+              <div>
+                <label htmlFor="custom">Custom</label>
+                <input type="radio" id="custom" name="gender" value="custom" />
+              </div>
+            </RadioWrapper>
+          </GenderInput>
+          <ButtonWrapper>
+            <Button
+              type="submit"
+              padding="11px 70px"
+              text="Sign Up"
+              secondary
+            />
+          </ButtonWrapper>
         </Body>
       </Card>
     </ModalWrapper>
   );
 };
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+`;
+
+const RadioWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  & div {
+    font-size: 15px;
+    padding: 11px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+const GenderInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  & p {
+    font-size: 12px;
+    color: gray;
+  }
+`;
 
 const BirthdayInput = styled.div`
   display: flex;
@@ -89,7 +137,7 @@ const BirthdayInput = styled.div`
 
   & input {
     font-size: 15px;
-    padding: 5px;
+    padding: 11px;
     border-radius: 5px;
     border: 1px solid lightgray;
   }
@@ -142,6 +190,7 @@ const Header = styled.div`
   & p {
     color: gray;
     font-size: 14px;
+    padding-top: 3px;
   }
 
   & button {
@@ -155,10 +204,14 @@ const Header = styled.div`
 
 const ModalWrapper = styled.div`
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
+
+  & input:focus {
+    outline: none;
+  }
 `;
 
 const SignUp = () => {

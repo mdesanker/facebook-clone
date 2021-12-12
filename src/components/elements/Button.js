@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 
-const Button = ({ text, type, onClick, primary, secondary }) => {
+const Button = ({ text, type, padding, onClick, primary, secondary }) => {
   return (
     <ButtonWrapper
       type={type}
+      padding={padding}
       onClick={onClick}
       primary={primary}
       secondary={secondary}
@@ -20,13 +21,13 @@ const ButtonWrapper = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 200ms;
+  padding: ${(props) => (props.padding ? props.padding : "1rem")};
 
   ${(props) =>
     props.primary &&
     css`
       font-size: 1.2rem;
       background-color: ${({ theme }) => theme.colors.primary};
-      padding: 0.5rem 2rem;
 
       &:hover {
         background-color: ${({ theme }) => theme.colors.primaryHover};
@@ -36,9 +37,8 @@ const ButtonWrapper = styled.button`
   ${(props) =>
     props.secondary &&
     css`
-      font-size: 16px;
+      font-size: 1rem;
       background-color: ${({ theme }) => theme.colors.secondary};
-      padding: 1rem;
 
       &:hover {
         background-color: ${({ theme }) => theme.colors.secondaryHover};
