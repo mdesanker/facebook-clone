@@ -51,8 +51,15 @@ const SignUpModal = () => {
               required
             />
           </TextInput>
-          <p>Birthday</p>
-          <input type="date" id="birthday" name="birthday" />
+          <BirthdayInput>
+            <label htmlFor="birthday">
+              Birthday{" "}
+              <abbr title="You can choose whether to share your birthday with other users">
+                <i className="fas fa-question-circle" />
+              </abbr>
+            </label>
+            <input type="date" id="birthday" name="birthday" required />
+          </BirthdayInput>
           <p>Gender</p>
           <div>
             <div>
@@ -74,6 +81,24 @@ const SignUpModal = () => {
     </ModalWrapper>
   );
 };
+
+const BirthdayInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  & input {
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+  }
+
+  & label {
+    font-size: 12px;
+    color: gray;
+  }
+`;
 
 const TextInput = styled.div`
   display: flex;
