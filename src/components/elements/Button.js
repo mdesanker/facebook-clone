@@ -16,7 +16,6 @@ const Button = ({ text, type, onClick, primary, secondary }) => {
 const ButtonWrapper = styled.button`
   font-weight: bold;
   color: white;
-  padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -25,8 +24,9 @@ const ButtonWrapper = styled.button`
   ${(props) =>
     props.primary &&
     css`
-      font-size: 1rem;
+      font-size: 1.2rem;
       background-color: ${({ theme }) => theme.colors.primary};
+      padding: 0.5rem 2rem;
 
       &:hover {
         background-color: ${({ theme }) => theme.colors.primaryHover};
@@ -36,8 +36,9 @@ const ButtonWrapper = styled.button`
   ${(props) =>
     props.secondary &&
     css`
-      font-size: 0.8rem;
+      font-size: 16px;
       background-color: ${({ theme }) => theme.colors.secondary};
+      padding: 1rem;
 
       &:hover {
         background-color: ${({ theme }) => theme.colors.secondaryHover};
