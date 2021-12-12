@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CenterNav from "./CenterNav";
 import Logo from "./Logo";
 import ProfileTab from "./ProfileTab";
 import SearchBtn from "./SearchBtn";
@@ -9,6 +10,9 @@ const Header = () => {
       <HeaderSection>
         <Logo />
         <SearchBtn />
+      </HeaderSection>
+      <HeaderSection>
+        <CenterNav />
       </HeaderSection>
       <HeaderSection>
         <ProfileTab />

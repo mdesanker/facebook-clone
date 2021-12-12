@@ -4,7 +4,7 @@ import Header from "../elements/header/Header";
 const Home = () => {
   return (
     <Fragment>
-      <Header />
+      {/* <Header /> */}
       <main>Content</main>
     </Fragment>
   );
