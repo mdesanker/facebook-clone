@@ -11,7 +11,12 @@ const Login = () => {
             <h1>fakebook</h1>
             <p>Connect with friends and the world around you on Fakebook.</p>
           </Greeting>
-          <Signin />
+          <SigninWrapper>
+            <Signin />
+            <p>
+              <strong>Create a Page</strong> for a celebrity, brand or business.
+            </p>
+          </SigninWrapper>
         </ContentWrapper>
       </LoginWrapper>
       <Footer>mdesanker © 2021</Footer>
@@ -23,7 +28,7 @@ const Greeting = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  // max-width: 50%;
+  padding-top: 60px;
 
   & h1 {
     color: ${({ theme }) => theme.colors.primary};
@@ -35,19 +40,30 @@ const Greeting = styled.div`
   }
 `;
 
+const SigninWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & p {
+    text-align: center;
+    font-size: 14px;
+  }
+`;
+
 const ContentWrapper = styled.div`
   width: 100%;
   max-width: 1000px;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
 `;
 
 const LoginWrapper = styled.main`
   min-height: 860px;
-  padding-bottom: 160px;
+  padding: 20px 0 200px;
   display: flex;
   justify-content: center;
   align-items: center;
