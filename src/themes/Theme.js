@@ -6,6 +6,7 @@ const Theme = {
     secondaryHover: "#338e20",
     lightGray: "#f0f2f5",
     mediumGray: "#e4e6eb",
+    inputGray: "#ccd0d5",
   },
 };
 

@@ -19,39 +19,41 @@ const SignUpModal = () => {
           </button>
         </Header>
         <Body>
-          <div>
+          <TextInput>
+            <div>
+              <input
+                type="text"
+                id="first"
+                name="first"
+                placeholder="First name"
+                required
+              />
+              <input
+                type="text"
+                id="last"
+                name="last"
+                placeholder="Last name"
+                required
+              />
+            </div>
             <input
-              type="text"
-              id="first"
-              name="first"
-              placeholder="First name"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
               required
             />
             <input
-              type="text"
-              id="last"
-              name="last"
-              placeholder="Last name"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
               required
             />
-          </div>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-          <label htmlFor="birthday">Birthday</label>
+          </TextInput>
+          <p>Birthday</p>
           <input type="date" id="birthday" name="birthday" />
-          <label htmlFor="gender">Gender</label>
+          <p>Gender</p>
           <div>
             <div>
               <label htmlFor="female">Female</label>
@@ -66,18 +68,41 @@ const SignUpModal = () => {
               <input type="radio" id="custom" name="gender" value="custom" />
             </div>
           </div>
-          <Button text="Sign Up" secondary />
+          <Button type="submit" text="Sign Up" secondary />
         </Body>
       </Card>
     </ModalWrapper>
   );
 };
 
+const TextInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  & div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  & input {
+    width: 100%;
+    flex-grow: 1;
+    font-size: 15px;
+    padding: 11px;
+    background-color: ${({ theme }) => theme.colors.lightGray};
+    border: thin solid lightgray;
+    border-radius: 5px;
+  }
+`;
+
 const Body = styled.form`
   width: 432px;
   padding: 10px 16px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 
 const Header = styled.div`
