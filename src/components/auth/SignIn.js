@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../elements/Button";
 import Card from "../elements/Card";
 
 const Signin = () => {
@@ -6,7 +7,7 @@ const Signin = () => {
     <Card padding="1rem">
       <Input type="email" placeholder="Email" />
       <Input type="password" placeholder="Password" />
-      <button>Log In</button>
+      <Button type="button" text="Sign In" primary />
     </Card>
   );
 };
