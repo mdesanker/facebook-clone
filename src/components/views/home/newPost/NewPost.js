@@ -4,28 +4,26 @@ import ContentBtn from "./ContentBtn";
 
 const NewPost = () => {
   return (
-    <Wrapper>
-      <Card width="500px" padding="12px 16px 10px" content>
-        <TopContainer>
-          <ProfileIcon />
-          <NewPostButton>What's on your mind, Michael?</NewPostButton>
-        </TopContainer>
-        <BottomContainer>
-          <ContentBtn color="rgb(243, 66, 95)">
-            <i className="fas fa-video" />
-            <p>Live video</p>
-          </ContentBtn>
-          <ContentBtn color="rgb(69, 189, 98)">
-            <i className="far fa-images" />
-            <p>Photo/video</p>
-          </ContentBtn>
-          <ContentBtn color="rgb(247, 185, 40)">
-            <i className="far fa-laugh" />
-            <p>Feeling/activity</p>
-          </ContentBtn>
-        </BottomContainer>
-      </Card>
-    </Wrapper>
+    <Card width="500px" padding="12px 16px 10px" content>
+      <TopContainer>
+        <ProfileIcon />
+        <NewPostButton>What's on your mind, Michael?</NewPostButton>
+      </TopContainer>
+      <BottomContainer>
+        <ContentBtn color="rgb(243, 66, 95)">
+          <i className="fas fa-video" />
+          <p>Live video</p>
+        </ContentBtn>
+        <ContentBtn color="rgb(69, 189, 98)">
+          <i className="far fa-images" />
+          <p>Photo/video</p>
+        </ContentBtn>
+        <ContentBtn color="rgb(247, 185, 40)">
+          <i className="far fa-laugh" />
+          <p>Feeling/activity</p>
+        </ContentBtn>
+      </BottomContainer>
+    </Card>
   );
 };
 
@@ -61,7 +59,5 @@ const TopContainer = styled.div`
   padding-bottom: 12px;
   border-bottom: 1px solid lightgray;
 `;
-
-const Wrapper = styled.div``;
 
 export default NewPost;
