@@ -5,7 +5,7 @@ import ContentBtn from "./ContentBtn";
 
 const NewPost = () => {
   return (
-    <Card width="500px" padding="12px 16px 10px" content>
+    <Card width="500px" padding="12px 16px 10px" feed>
       <TopContainer>
         <ProfileIcon />
         <NewPostButton>What's on your mind, Michael?</NewPostButton>

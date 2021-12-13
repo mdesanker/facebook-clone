@@ -3,7 +3,7 @@ import PostHeader from "./PostHeader";
 
 const Post = () => {
   return (
-    <Card width="500px" padding="0" content>
+    <Card width="500px" padding="0" feed>
       <PostHeader />
       Post
     </Card>
