@@ -1,10 +1,10 @@
 import React from "react";
 import SignUp from "./components/auth/SignUp";
-import Home from "./components/views/Home";
+import Home from "./components/views/home/Home";
 import Login from "./components/views/Login";
 import GlobalStyles from "./themes/GlobalStyles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/elements/header/Header";
+import Header from "./components/views/home/header/Header";
 
 function App() {
   return (
