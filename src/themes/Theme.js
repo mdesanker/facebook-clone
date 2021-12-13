@@ -12,6 +12,9 @@ const Theme = {
   icons: {
     ellipsis: <i className="fas fa-ellipsis-h" />,
   },
+  gradients: {
+    primaryGradient: "linear-gradient(to bottom, #60a2f7, #1877f2)",
+  },
 };
 
 export default Theme;
