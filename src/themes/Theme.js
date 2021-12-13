@@ -7,6 +7,7 @@ const Theme = {
     lightGray: "#f0f2f5",
     mediumGray: "#e4e6eb",
     inputGray: "#ccd0d5",
+    darkGray: "#65676b",
   },
 };
 

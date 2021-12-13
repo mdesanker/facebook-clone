@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Card from "../../../elements/Card";
+import ContentBtn from "./ContentBtn";
 
 const NewPost = () => {
   return (
@@ -9,10 +10,30 @@ const NewPost = () => {
           <ProfileIcon />
           <NewPostButton>What's on your mind, Michael?</NewPostButton>
         </TopContainer>
+        <BottomContainer>
+          <ContentBtn color="rgb(243, 66, 95)">
+            <i className="fas fa-video" />
+            <p>Live video</p>
+          </ContentBtn>
+          <ContentBtn color="rgb(69, 189, 98)">
+            <i className="far fa-images" />
+            <p>Photo/video</p>
+          </ContentBtn>
+          <ContentBtn color="rgb(247, 185, 40)">
+            <i className="far fa-laugh" />
+            <p>Feeling/activity</p>
+          </ContentBtn>
+        </BottomContainer>
       </Card>
     </Wrapper>
   );
 };
+
+const BottomContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+`;
 
 const NewPostButton = styled.button`
   flex-grow: 1;
@@ -23,6 +44,7 @@ const NewPostButton = styled.button`
   padding: 11px;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
 `;
 
 const ProfileIcon = styled.div`
@@ -36,6 +58,8 @@ const TopContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid lightgray;
 `;
 
 const Wrapper = styled.div``;
