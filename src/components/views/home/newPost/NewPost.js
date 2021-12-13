@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Card from "../../../elements/Card";
 import ProfileIcon from "../../../elements/ProfileIcon";
-import ContentBtn from "./ContentBtn";
+import ContentBtn from "../../../elements/ContentBtn";
 
 const NewPost = () => {
   return (

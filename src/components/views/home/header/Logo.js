@@ -13,7 +13,7 @@ const Logo = () => {
 
 const LogoWrapper = styled.div`
   font-size: 40px;
-  background: linear-gradient(to bottom, #60a2f7, #1877f2);
+  background: ${({ theme }) => theme.gradients.primaryGradient};
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

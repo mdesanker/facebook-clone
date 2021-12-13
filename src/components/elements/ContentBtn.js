@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-const ContentBtn = ({ children, color }) => {
-  return <BtnWrapper color={color}>{children}</BtnWrapper>;
+const ContentBtn = ({ children, color, small }) => {
+  return (
+    <BtnWrapper color={color} small={small}>
+      {children}
+    </BtnWrapper>
+  );
 };
 
 const BtnWrapper = styled.button`
@@ -17,7 +21,7 @@ const BtnWrapper = styled.button`
   cursor: pointer;
 
   & i {
-    font-size: 25px;
+    font-size: ${(props) => (props.small ? "18px" : "25px")};
     color: ${(props) => props.color};
   }
 
