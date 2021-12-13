@@ -42,7 +42,6 @@ const Wrapper = styled.div`
   gap: 10px;
   width: 100%;
   padding: 12px 16px 12px;
-  border-bottom: ${({ theme }) => theme.colors.lightGray};
 `;
 
 export default PostHeader;

@@ -20,6 +20,7 @@ const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   font-size: 15px;
   color: gray;
