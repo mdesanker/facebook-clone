@@ -40,6 +40,10 @@ const HomeWrapper = styled.main`
   padding-top: 80px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    justify-content: space-evenly;
+  }
 `;
 
 export default Home;

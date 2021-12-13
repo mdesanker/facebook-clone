@@ -9,6 +9,9 @@ const Theme = {
     inputGray: "#ccd0d5",
     darkGray: "#65676b",
   },
+  icons: {
+    ellipsis: <i className="fas fa-ellipsis-h" />,
+  },
 };
 
 export default Theme;

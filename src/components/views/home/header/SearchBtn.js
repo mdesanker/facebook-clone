@@ -3,7 +3,7 @@ import styled from "styled-components";
 const SearchBtn = () => {
   return (
     <BtnWrapper>
-      <i class="fas fa-search" />
+      <i className="fas fa-search" />
     </BtnWrapper>
   );
 };

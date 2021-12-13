@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Card from "../../../elements/Card";
+import ProfileIcon from "../../../elements/ProfileIcon";
 import ContentBtn from "./ContentBtn";
 
 const NewPost = () => {
@@ -45,12 +46,12 @@ const NewPostButton = styled.button`
   cursor: pointer;
 `;
 
-const ProfileIcon = styled.div`
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: pink;
-`;
+// const ProfileIcon = styled.div`
+//   height: 40px;
+//   width: 40px;
+//   border-radius: 50%;
+//   background-color: pink;
+// `;
 
 const TopContainer = styled.div`
   display: flex;
