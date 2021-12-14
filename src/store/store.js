@@ -6,8 +6,9 @@ import postReducer from "./postSlice";
 const store = configureStore({
   reducer: {
     auth: authReducer,
-    users: usersReducer,
-    post: postReducer,
+    // users: usersReducer,
+    // post: postReducer,
+    // firebase: firebaseReducer,
   },
 });
 
