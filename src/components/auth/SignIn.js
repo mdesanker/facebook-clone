@@ -2,6 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import Button from "../elements/Button";
 import Card from "../elements/Card";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebase";
 
 const Signin = ({ onNewAccount }) => {
   const [loginCredentials, setLoginCredentials] = useState({});
@@ -16,6 +18,18 @@ const Signin = ({ onNewAccount }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(loginCredentials);
+
+    signInWithEmailAndPassword(
+      auth,
+      loginCredentials.email,
+      loginCredentials.password
+    )
+      .then((cred) => {
+        console.log("user logged in", cred.user);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
 
   return (
