@@ -4,6 +4,8 @@ import Card from "../elements/Card";
 import Overlay from "../elements/Overlay";
 import styled from "styled-components";
 import Button from "../elements/Button";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebase";
 
 const SignUpModal = ({ onClose }) => {
   const [newUser, setNewUser] = useState({});
@@ -17,7 +19,16 @@ const SignUpModal = ({ onClose }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(newUser);
+    console.log(newUser.email);
+
+    createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
+      .then((cred) => {
+        console.log("user created: ", cred.user);
+        onClose();
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
 
   return (
@@ -80,7 +91,6 @@ const SignUpModal = ({ onClose }) => {
               type="date"
               id="birthday"
               name="birthday"
-              required
               onChange={inputChangeHandler}
             />
           </BirthdayInput>
