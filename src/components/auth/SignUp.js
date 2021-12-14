@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import ReactDOM from "react-dom";
 import Card from "../elements/Card";
 import Overlay from "../elements/Overlay";
@@ -6,6 +6,20 @@ import styled from "styled-components";
 import Button from "../elements/Button";
 
 const SignUpModal = ({ onClose }) => {
+  const [newUser, setNewUser] = useState({});
+
+  const inputChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setNewUser((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(newUser);
+  };
+
   return (
     <ModalWrapper>
       <Card radius="0 0 8px 8px" padding="0">
@@ -18,7 +32,7 @@ const SignUpModal = ({ onClose }) => {
             <i className="fas fa-times"></i>
           </button>
         </Header>
-        <Body>
+        <Body onSubmit={submitHandler}>
           <TextInput>
             <div>
               <input
@@ -27,6 +41,7 @@ const SignUpModal = ({ onClose }) => {
                 name="first"
                 placeholder="First name"
                 required
+                onChange={inputChangeHandler}
               />
               <input
                 type="text"
@@ -34,6 +49,7 @@ const SignUpModal = ({ onClose }) => {
                 name="last"
                 placeholder="Last name"
                 required
+                onChange={inputChangeHandler}
               />
             </div>
             <input
@@ -42,6 +58,7 @@ const SignUpModal = ({ onClose }) => {
               name="email"
               placeholder="Email"
               required
+              onChange={inputChangeHandler}
             />
             <input
               type="password"
@@ -49,6 +66,7 @@ const SignUpModal = ({ onClose }) => {
               name="password"
               placeholder="Password"
               required
+              onChange={inputChangeHandler}
             />
           </TextInput>
           <BirthdayInput>
@@ -58,7 +76,13 @@ const SignUpModal = ({ onClose }) => {
                 <i className="fas fa-question-circle" />
               </abbr>
             </label>
-            <input type="date" id="birthday" name="birthday" required />
+            <input
+              type="date"
+              id="birthday"
+              name="birthday"
+              required
+              onChange={inputChangeHandler}
+            />
           </BirthdayInput>
           <GenderInput>
             <p>
@@ -70,15 +94,33 @@ const SignUpModal = ({ onClose }) => {
             <RadioWrapper>
               <div>
                 <label htmlFor="female">Female</label>
-                <input type="radio" id="female" name="gender" value="female" />
+                <input
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="female"
+                  onChange={inputChangeHandler}
+                />
               </div>
               <div>
                 <label htmlFor="male">Male</label>
-                <input type="radio" id="male" name="gender" value="male" />
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  onChange={inputChangeHandler}
+                />
               </div>
               <div>
                 <label htmlFor="custom">Custom</label>
-                <input type="radio" id="custom" name="gender" value="custom" />
+                <input
+                  type="radio"
+                  id="custom"
+                  name="gender"
+                  value="custom"
+                  onChange={inputChangeHandler}
+                />
               </div>
             </RadioWrapper>
           </GenderInput>
