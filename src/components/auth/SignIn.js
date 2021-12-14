@@ -1,14 +1,41 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Button from "../elements/Button";
 import Card from "../elements/Card";
 
 const Signin = ({ onNewAccount }) => {
+  const [loginCredentials, setLoginCredentials] = useState({});
+
+  const inputChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setLoginCredentials((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(loginCredentials);
+  };
+
   return (
     <Card padding="1rem">
-      <SigninWrapper>
-        <Input type="email" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
-        <Button type="button" text="Log In" primary />
+      <SigninWrapper onSubmit={submitHandler}>
+        <Input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          onChange={inputChangeHandler}
+        />
+        <Input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          onChange={inputChangeHandler}
+        />
+        <Button type="submit" text="Log In" primary />
         <a href="/">Forgot password?</a>
       </SigninWrapper>
       <SignupWrapper>
@@ -38,7 +65,7 @@ const Input = styled.input`
   }
 `;
 
-const SigninWrapper = styled.div`
+const SigninWrapper = styled.form`
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid lightgray;
