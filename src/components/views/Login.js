@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import styled from "styled-components";
 import Signin from "../auth/SignIn";
 
-const Login = () => {
+const Login = ({ onCreateAccount }) => {
   return (
     <Fragment>
       <LoginWrapper>
@@ -12,7 +12,7 @@ const Login = () => {
             <p>Connect with friends and the world around you on Fakebook.</p>
           </Greeting>
           <SigninWrapper>
-            <Signin />
+            <Signin onNewAccount={onCreateAccount} />
             <p>
               <strong>Create a Page</strong> for a celebrity, brand or business.
             </p>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../elements/Button";
 import Card from "../elements/Card";
 
-const Signin = () => {
+const Signin = ({ onNewAccount }) => {
   return (
     <Card padding="1rem">
       <SigninWrapper>
@@ -15,6 +15,7 @@ const Signin = () => {
         <Button
           type="button"
           text="Create New Account"
+          onClick={onNewAccount}
           padding="15px 25px"
           secondary
         />

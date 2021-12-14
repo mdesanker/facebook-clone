@@ -5,7 +5,7 @@ import Overlay from "../elements/Overlay";
 import styled from "styled-components";
 import Button from "../elements/Button";
 
-const SignUpModal = () => {
+const SignUpModal = ({ onClose }) => {
   return (
     <ModalWrapper>
       <Card radius="0 0 8px 8px" padding="0">
@@ -14,7 +14,7 @@ const SignUpModal = () => {
             <h1>Sign Up</h1>
             <p>It's quick and easy.</p>
           </div>
-          <button>
+          <button onClick={onClose}>
             <i className="fas fa-times"></i>
           </button>
         </Header>
@@ -214,10 +214,13 @@ const ModalWrapper = styled.div`
   }
 `;
 
-const SignUp = () => {
+const SignUp = ({ onClose }) => {
   return (
     <Fragment>
-      {ReactDOM.createPortal(<SignUpModal />, document.querySelector("#modal"))}
+      {ReactDOM.createPortal(
+        <SignUpModal onClose={onClose} />,
+        document.querySelector("#modal")
+      )}
       {ReactDOM.createPortal(<Overlay />, document.querySelector("#overlay"))}
     </Fragment>
   );
