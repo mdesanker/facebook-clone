@@ -7,7 +7,7 @@ import Post from "./post/Post";
 const Home = () => {
   return (
     <Fragment>
-      {/* <Header /> */}
+      <Header />
       <HomeWrapper>
         <NavigationColumn>Links</NavigationColumn>
         <FeedColumn>

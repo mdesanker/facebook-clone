@@ -12,6 +12,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { saveUser } from "./store/authSlice";
 
+import ProtectedRoute from "./utils/ProtectedRoute";
+
 function App() {
   const [signUpVisible, setSignUpVisible] = useState(false);
 
@@ -43,13 +45,19 @@ function App() {
     <Router>
       <GlobalStyles />
       {signUpVisible && <SignUp onClose={closeSignUpHandler} />}
-      <Header />
       <Routes>
+        <Route
+          path="/"
+          element={<Login onCreateAccount={showSignUpHandler} />}
+        />
+        <Route path="/home" element={<Home />} />
+        {/* <Route path="/" element={<ProtectedRoute />}>
+          <Route path="/home" element={<Home />} />
+        </Route>
         <Route
           path="/login"
           element={<Login onCreateAccount={showSignUpHandler} />}
-        />
-        <Route path="/" element={<Home />} />
+        /> */}
       </Routes>
     </Router>
   );
