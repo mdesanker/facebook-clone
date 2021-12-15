@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import RoundBtn from "../../../elements/RoundBtn";
 import CenterNav from "./CenterNav";
 import Logo from "./Logo";
 import ProfileTab from "./ProfileTab";
@@ -16,6 +17,7 @@ const Header = () => {
       </HeaderSection>
       <HeaderSection>
         <ProfileTab />
+        <RoundBtn icon="down" gray />
       </HeaderSection>
     </HeaderWrapper>
   );

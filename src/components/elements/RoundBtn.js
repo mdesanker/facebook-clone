@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 const RoundBtn = ({ icon, clear, gray }) => {
   const icons = {
     ellipsis: <i className="fas fa-ellipsis-h" />,
+    down: <i className="fas fa-caret-down" />,
   };
 
   return (
@@ -22,7 +23,7 @@ const ButtonWrapper = styled.button`
   align-items: center;
   cursor: pointer;
 
-  font-size: 15px;
+  font-size: 20px;
   color: gray;
 
   ${(props) =>
@@ -32,6 +33,16 @@ const ButtonWrapper = styled.button`
 
       &:hover {
         background-color: #efefef;
+      }
+    `};
+
+  ${(props) =>
+    props.gray &&
+    css`
+      background-color: #efefef;
+
+      &:hover {
+        background-color: #e5e5e5;
       }
     `};
 `;
