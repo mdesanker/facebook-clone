@@ -3,9 +3,10 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Card from "../../../elements/Card";
 import RoundBtn from "../../../elements/RoundBtn";
+import DropdownBtn from "./DropdownBtn";
 
 const OptionsMenu = () => {
-  const dropDownRef = useRef();
+  const dropdownRef = useRef();
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -13,12 +14,12 @@ const OptionsMenu = () => {
     setIsVisible(!isVisible);
   };
 
-  console.log("ref", dropDownRef.current);
+  console.log("ref", dropdownRef.current);
 
   useEffect(() => {
     const outsideClickEvent = (e) => {
       console.log(e.target);
-      if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsVisible(false);
       }
     };
@@ -37,7 +38,7 @@ const OptionsMenu = () => {
       <RoundBtn icon="down" gray onClick={clickHandler} />
       {isVisible &&
         ReactDOM.createPortal(
-          <div ref={dropDownRef}>
+          <div ref={dropdownRef}>
             <DropDown />
           </div>,
           document.querySelector("#modal")
@@ -50,9 +51,10 @@ const DropDown = () => {
   return (
     <Card
       width="360px"
+      padding="8px"
       custom="position: absolute; top: 65px; right: 10px; z=index: 500;"
     >
-      Menu
+      <DropdownBtn text="Log Out" icon="exit" />
     </Card>
   );
 };
