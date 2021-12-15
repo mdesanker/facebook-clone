@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Card from "../../../elements/Card";
@@ -13,7 +13,7 @@ const OptionsMenu = () => {
 
   const [isVisible, setIsVisible] = useState(false);
 
-  const clickHandler = () => {
+  const dropdownVisibleHandler = () => {
     setIsVisible(!isVisible);
   };
 
@@ -35,11 +35,16 @@ const OptionsMenu = () => {
 
   return (
     <OptionsContainer>
-      <RoundBtn icon="down" gray active={isVisible} onClick={clickHandler} />
+      <RoundBtn
+        icon="down"
+        gray
+        active={isVisible}
+        onClick={dropdownVisibleHandler}
+      />
       {isVisible &&
         ReactDOM.createPortal(
           <div ref={dropdownRef}>
-            <DropDown />
+            <DropDown onSelect={dropdownVisibleHandler} />
           </div>,
           document.querySelector("#modal")
         )}
@@ -47,11 +52,12 @@ const OptionsMenu = () => {
   );
 };
 
-const DropDown = () => {
+const DropDown = ({ onSelect }) => {
   const logOutHandler = () => {
     signOut(auth)
       .then(() => {
         console.log("user signed out");
+        onSelect();
       })
       .catch((error) => {
         console.error(error.message);
