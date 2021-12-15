@@ -17,8 +17,6 @@ const OptionsMenu = () => {
     setIsVisible(!isVisible);
   };
 
-  console.log("ref", dropdownRef.current);
-
   useEffect(() => {
     const outsideClickEvent = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -37,7 +35,7 @@ const OptionsMenu = () => {
 
   return (
     <OptionsContainer>
-      <RoundBtn icon="down" gray onClick={clickHandler} />
+      <RoundBtn icon="down" gray active={isVisible} onClick={clickHandler} />
       {isVisible &&
         ReactDOM.createPortal(
           <div ref={dropdownRef}>

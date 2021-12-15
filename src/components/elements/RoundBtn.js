@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 
-const RoundBtn = ({ icon, clear, gray, onClick }) => {
+const RoundBtn = ({ icon, clear, gray, active, onClick }) => {
   const icons = {
     ellipsis: <i className="fas fa-ellipsis-h" />,
     down: <i className="fas fa-caret-down" />,
   };
 
   return (
-    <ButtonWrapper clear={clear} gray={gray} onClick={onClick}>
+    <ButtonWrapper clear={clear} gray={gray} active={active} onClick={onClick}>
       {icons[icon]}
     </ButtonWrapper>
   );
@@ -43,6 +43,17 @@ const ButtonWrapper = styled.button`
 
       &:hover {
         background-color: #e5e5e5;
+      }
+    `};
+
+  ${(props) =>
+    props.active &&
+    css`
+      background-color: #e7f3ff;
+      color: ${({ theme }) => theme.colors.primary};
+
+      &:hover {
+        background-color: #dbedff;
       }
     `};
 `;
