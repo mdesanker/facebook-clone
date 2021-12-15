@@ -1,25 +1,32 @@
+import { Fragment, useState } from "react";
 import styled from "styled-components";
 import RoundBtn from "../../../elements/RoundBtn";
+import OptionsMenu from "../popups/OptionsMenu";
 import CenterNav from "./CenterNav";
 import Logo from "./Logo";
 import ProfileTab from "./ProfileTab";
 import SearchBtn from "./SearchBtn";
 
 const Header = () => {
+  const [optionsVisible, setOptionsVisible] = useState(true);
+
   return (
-    <HeaderWrapper>
-      <HeaderSection>
-        <Logo />
-        <SearchBtn />
-      </HeaderSection>
-      <HeaderSection>
-        <CenterNav />
-      </HeaderSection>
-      <HeaderSection>
-        <ProfileTab />
-        <RoundBtn icon="down" gray />
-      </HeaderSection>
-    </HeaderWrapper>
+    <Fragment>
+      {optionsVisible && <OptionsMenu />}
+      <HeaderWrapper>
+        <HeaderSection>
+          <Logo />
+          <SearchBtn />
+        </HeaderSection>
+        <HeaderSection>
+          <CenterNav />
+        </HeaderSection>
+        <HeaderSection>
+          <ProfileTab />
+          <RoundBtn icon="down" gray />
+        </HeaderSection>
+      </HeaderWrapper>
+    </Fragment>
   );
 };
 
@@ -45,6 +52,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: -1;
 `;
 
 export default Header;

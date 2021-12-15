@@ -1,9 +1,16 @@
 import { Fragment } from "react";
-import ReactDOM from "react-dom;";
+import ReactDOM from "react-dom";
 import Card from "../../../elements/Card";
 
 const Options = () => {
-  return <Card>Options</Card>;
+  return (
+    <Card
+      width="360px"
+      custom="position: fixed; top: 50px; right: 10px; z=index: 500;"
+    >
+      Menu
+    </Card>
+  );
 };
 
 const OptionsMenu = () => {

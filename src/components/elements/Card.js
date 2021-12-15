@@ -1,14 +1,21 @@
 import styled, { css } from "styled-components";
 
-const Card = ({ children, radius, padding, width, feed }) => {
+const Card = ({ children, radius, padding, width, feed, custom }) => {
   return (
-    <CardWrapper radius={radius} padding={padding} width={width} feed={feed}>
+    <CardWrapper
+      radius={radius}
+      padding={padding}
+      width={width}
+      feed={feed}
+      custom={custom}
+    >
       {children}
     </CardWrapper>
   );
 };
 
 const CardWrapper = styled.div`
+  position: ${(props) => (props.absolute ? "absolute" : "static")};
   background-color: white;
   padding: ${(props) => (props.padding ? props.padding : "1rem")};
   border-radius: ${(props) => (props.radius ? props.radius : "8px")};
@@ -26,6 +33,12 @@ const CardWrapper = styled.div`
     props.feed &&
     css`
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    `}
+
+    ${(props) =>
+    props.custom &&
+    css`
+      ${props.custom}
     `}
 `;
 
