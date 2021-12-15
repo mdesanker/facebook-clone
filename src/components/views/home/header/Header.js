@@ -8,11 +8,8 @@ import ProfileTab from "./ProfileTab";
 import SearchBtn from "./SearchBtn";
 
 const Header = () => {
-  const [optionsVisible, setOptionsVisible] = useState(true);
-
   return (
     <Fragment>
-      {optionsVisible && <OptionsMenu />}
       <HeaderWrapper>
         <HeaderSection>
           <Logo />
@@ -23,7 +20,8 @@ const Header = () => {
         </HeaderSection>
         <HeaderSection>
           <ProfileTab />
-          <RoundBtn icon="down" gray />
+          {/* <RoundBtn icon="down" gray /> */}
+          <OptionsMenu />
         </HeaderSection>
       </HeaderWrapper>
     </Fragment>
@@ -52,7 +50,6 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: -1;
 `;
 
 export default Header;

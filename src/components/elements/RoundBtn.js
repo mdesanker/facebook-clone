@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 
-const RoundBtn = ({ icon, clear, gray }) => {
+const RoundBtn = ({ icon, clear, gray, onClick }) => {
   const icons = {
     ellipsis: <i className="fas fa-ellipsis-h" />,
     down: <i className="fas fa-caret-down" />,
   };
 
   return (
-    <ButtonWrapper clear={clear} gray={gray}>
+    <ButtonWrapper clear={clear} gray={gray} onClick={onClick}>
       {icons[icon]}
     </ButtonWrapper>
   );
