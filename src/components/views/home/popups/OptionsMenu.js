@@ -5,6 +5,9 @@ import Card from "../../../elements/Card";
 import RoundBtn from "../../../elements/RoundBtn";
 import DropdownBtn from "./DropdownBtn";
 
+import { signOut } from "firebase/auth";
+import { auth } from "../../../../config/firebase";
+
 const OptionsMenu = () => {
   const dropdownRef = useRef();
 
@@ -18,7 +21,6 @@ const OptionsMenu = () => {
 
   useEffect(() => {
     const outsideClickEvent = (e) => {
-      console.log(e.target);
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsVisible(false);
       }
@@ -48,13 +50,23 @@ const OptionsMenu = () => {
 };
 
 const DropDown = () => {
+  const logOutHandler = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("user signed out");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+
   return (
     <Card
       width="360px"
       padding="8px"
       custom="position: absolute; top: 65px; right: 10px; z=index: 500;"
     >
-      <DropdownBtn text="Log Out" icon="exit" />
+      <DropdownBtn onClick={logOutHandler} text="Log Out" icon="exit" />
     </Card>
   );
 };
