@@ -5,7 +5,7 @@ import Card from "../elements/Card";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config/firebase";
 
-const Signin = ({ onNewAccount }) => {
+const Signin = ({ onClickCreateNewAccount }) => {
   const [loginCredentials, setLoginCredentials] = useState({});
 
   const inputChangeHandler = (e) => {
@@ -56,7 +56,7 @@ const Signin = ({ onNewAccount }) => {
         <Button
           type="button"
           text="Create New Account"
-          onClick={onNewAccount}
+          onClick={onClickCreateNewAccount}
           padding="15px 25px"
           secondary
         />

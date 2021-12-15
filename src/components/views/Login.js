@@ -1,10 +1,22 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import styled from "styled-components";
 import Signin from "../auth/SignIn";
+import SignUp from "../auth/SignUp";
 
-const Login = ({ onCreateAccount }) => {
+const Login = () => {
+  const [signUpVisible, setSignUpVisible] = useState(false);
+
+  const showSignUpHandler = () => {
+    setSignUpVisible(true);
+  };
+
+  const closeSignUpHandler = () => {
+    setSignUpVisible(false);
+  };
+
   return (
     <Fragment>
+      {signUpVisible && <SignUp onClose={closeSignUpHandler} />}
       <LoginWrapper>
         <ContentWrapper>
           <Greeting>
@@ -12,7 +24,7 @@ const Login = ({ onCreateAccount }) => {
             <p>Connect with friends and the world around you on Fakebook.</p>
           </Greeting>
           <SigninWrapper>
-            <Signin onNewAccount={onCreateAccount} />
+            <Signin onClickCreateNewAccount={showSignUpHandler} />
             <p>
               <strong>Create a Page</strong> for a celebrity, brand or business.
             </p>

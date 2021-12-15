@@ -15,8 +15,6 @@ import { saveUser } from "./store/authSlice";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
 function App() {
-  const [signUpVisible, setSignUpVisible] = useState(false);
-
   const user = useSelector((state) => state.auth.value);
   console.log("user from state", user);
 
@@ -33,24 +31,12 @@ function App() {
     });
   }, [auth, dispatch]);
 
-  const showSignUpHandler = () => {
-    setSignUpVisible(true);
-  };
-
-  const closeSignUpHandler = () => {
-    setSignUpVisible(false);
-  };
-
   return (
     <Router>
       <GlobalStyles />
-      {signUpVisible && <SignUp onClose={closeSignUpHandler} />}
       <Routes>
-        <Route
-          path="/"
-          element={<Login onCreateAccount={showSignUpHandler} />}
-        />
-        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
         {/* <Route path="/" element={<ProtectedRoute />}>
           <Route path="/home" element={<Home />} />
         </Route>
