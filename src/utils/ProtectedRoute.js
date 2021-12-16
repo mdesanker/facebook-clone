@@ -5,9 +5,11 @@ import { Navigate, Outlet } from "react-router-dom";
 const ProtectedRoute = () => {
   console.log("PROTECTED ROUTE");
 
-  const user = useSelector((state) => state.auth.value);
+  // const user = useSelector((state) => state.auth.value);
 
-  console.log("User", user);
+  // console.log("User", user);
+
+  const user = true;
 
   return user ? <Outlet /> : <Navigate to="/login" />;
 };

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import styled from "styled-components";
-import Header from "./header/Header";
+import Header from "../header/Header";
 import NewPost from "./newPost/NewPost";
 import Post from "./post/Post";
 

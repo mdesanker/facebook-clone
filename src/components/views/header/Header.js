@@ -1,7 +1,6 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import styled from "styled-components";
-import RoundBtn from "../../../elements/RoundBtn";
-import OptionsMenu from "../popups/OptionsMenu";
+import OptionsMenu from "./popups/OptionsMenu";
 import CenterNav from "./CenterNav";
 import Logo from "./Logo";
 import ProfileTab from "./ProfileTab";
@@ -20,7 +19,6 @@ const Header = () => {
         </HeaderSection>
         <HeaderSection>
           <ProfileTab />
-          {/* <RoundBtn icon="down" gray /> */}
           <OptionsMenu />
         </HeaderSection>
       </HeaderWrapper>

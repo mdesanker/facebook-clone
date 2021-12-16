@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-import SignUp from "./components/auth/SignUp";
+import React, { useEffect } from "react";
 import Home from "./components/views/home/Home";
 import Login from "./components/views/Login";
 import GlobalStyles from "./themes/GlobalStyles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/views/home/header/Header";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase";
