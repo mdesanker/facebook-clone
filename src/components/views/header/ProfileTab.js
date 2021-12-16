@@ -32,6 +32,7 @@ const TabWrapper = styled.button`
 
   font-size: 16px;
   font-weight: bold;
+  text-decoration: none;
 
   &:hover {
     background-color: #efefef;

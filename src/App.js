@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { saveUser } from "./store/authSlice";
 
 import ProtectedRoute from "./utils/ProtectedRoute";
+import Profile from "./components/views/profile/Profile";
 
 function App() {
   const user = useSelector((state) => state.auth.value);
@@ -37,6 +38,7 @@ function App() {
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<ProtectedRoute />}>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
     </Router>

@@ -5,6 +5,7 @@ import CenterNav from "./CenterNav";
 import Logo from "./Logo";
 import ProfileTab from "./ProfileTab";
 import SearchBtn from "./SearchBtn";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -18,7 +19,9 @@ const Header = () => {
           <CenterNav />
         </HeaderSection>
         <HeaderSection>
-          <ProfileTab />
+          <Link to="/profile">
+            <ProfileTab />
+          </Link>
           <OptionsMenu />
         </HeaderSection>
       </HeaderWrapper>
@@ -34,6 +37,10 @@ const HeaderSection = styled.div`
   align-items: center;
   gap: 10px;
   margin: 0 16px;
+
+  & a {
+    text-decoration: none;
+  }
 
   // border: 1px solid red;
 `;
