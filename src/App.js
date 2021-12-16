@@ -36,14 +36,10 @@ function App() {
       <GlobalStyles />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/" element={<ProtectedRoute />}>
-          <Route path="/home" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<ProtectedRoute />}>
+          <Route path="/" element={<Home />} />
         </Route>
-        <Route
-          path="/login"
-          element={<Login onCreateAccount={showSignUpHandler} />}
-        /> */}
       </Routes>
     </Router>
   );
