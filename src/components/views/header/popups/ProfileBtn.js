@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import ProfileIcon from "../../../elements/ProfileIcon";
 
-const ProfileBtn = () => {
+const ProfileBtn = ({ onClick }) => {
   return (
-    <BtnWrapper>
+    <BtnWrapper onClick={onClick}>
       <ProfileIcon size="60px" />
       <TextWrapper>
         <h3>Michael Desanker</h3>

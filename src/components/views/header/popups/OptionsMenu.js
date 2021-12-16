@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Card from "../../../elements/Card";
 import RoundBtn from "../../../elements/RoundBtn";
@@ -11,12 +11,18 @@ import { auth } from "../../../../config/firebase";
 import ProfileBtn from "./ProfileBtn";
 
 const OptionsMenu = () => {
+  const navigate = useNavigate();
   const dropdownRef = useRef();
 
   const [isVisible, setIsVisible] = useState(false);
 
   const dropdownVisibleHandler = () => {
     setIsVisible(!isVisible);
+  };
+
+  const profileNavHandler = () => {
+    navigate("/profile");
+    setIsVisible(false);
   };
 
   useEffect(() => {
@@ -46,7 +52,10 @@ const OptionsMenu = () => {
       {isVisible &&
         ReactDOM.createPortal(
           <div ref={dropdownRef}>
-            <DropDown onSelect={dropdownVisibleHandler} />
+            <DropDown
+              onProfile={profileNavHandler}
+              onSelect={dropdownVisibleHandler}
+            />
           </div>,
           document.querySelector("#modal")
         )}
@@ -54,7 +63,7 @@ const OptionsMenu = () => {
   );
 };
 
-const DropDown = ({ onSelect }) => {
+const DropDown = ({ onSelect, onProfile }) => {
   const logOutHandler = () => {
     signOut(auth)
       .then(() => {
@@ -73,7 +82,7 @@ const DropDown = ({ onSelect }) => {
       custom="position: absolute; top: 65px; right: 10px; z=index: 500;"
     >
       <SectionWrapper>
-        <ProfileBtn />
+        <ProfileBtn onClick={onProfile} />
       </SectionWrapper>
       <DropdownBtn onClick={logOutHandler} text="Log Out" icon="exit" />
     </Card>
