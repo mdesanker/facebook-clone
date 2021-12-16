@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CommonBtn from "../../../elements/CommonBtn";
+import Background from "../../../../images/background.jpg";
 
 const ProfileHeader = () => {
   return (
@@ -33,6 +34,10 @@ const NamePlate = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+
+    & h3 {
+      color: gray;
+    }
   }
 
   & div:nth-child(2) {
@@ -48,9 +53,8 @@ const NamePlate = styled.div`
 const BackgroundContainer = styled.div`
   width: 100%;
   height: 350px;
-  border-radius: 0 0 8px 8px;
-  border: 1px solid red;
-  background: url();
+  border-radius: 0 0 10px 10px;
+  background: url(${Background});
   background-size: cover;
   background-position: center;
 `;
@@ -59,6 +63,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 970px;
   margin: 0 auto;
+  background-color: white;
 `;
 
 const Wrapper = styled.section`

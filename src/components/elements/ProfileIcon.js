@@ -4,7 +4,7 @@ const ProfileIcon = ({ size }) => {
   return <IconWrapper size={size}></IconWrapper>;
 };
 
-const IconWrapper = styled.button`
+const IconWrapper = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 50%;
