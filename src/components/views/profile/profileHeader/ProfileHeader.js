@@ -7,6 +7,7 @@ const ProfileHeader = () => {
     <Wrapper>
       <Container>
         <BackgroundContainer />
+        <ProfilePic />
         <NamePlate>
           <div>
             <h1>Michael Desanker</h1>
@@ -21,6 +22,18 @@ const ProfileHeader = () => {
     </Wrapper>
   );
 };
+
+const ProfilePic = styled.div`
+  position: absolute;
+  top: 300px;
+  left: 30px;
+  height: 168px;
+  width: 168px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background-color: pink;
+  z-index: 10;
+`;
 
 const NamePlate = styled.div`
   height: 145px;
@@ -60,6 +73,7 @@ const BackgroundContainer = styled.div`
 `;
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   max-width: 970px;
   margin: 0 auto;
@@ -67,7 +81,6 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.section`
-  position: relative;
   width: 100%;
 `;
 
