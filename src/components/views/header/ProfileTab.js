@@ -1,21 +1,14 @@
 import styled from "styled-components";
+import ProfileIcon from "../../elements/ProfileIcon";
 
 const ProfileTab = () => {
   return (
     <TabWrapper>
-      <Image />
+      <ProfileIcon size="28px" />
       Michael
     </TabWrapper>
   );
 };
-
-const Image = styled.div`
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  // object-fit: cover;
-  background-color: pink;
-`;
 
 const TabWrapper = styled.button`
   height: 36px;

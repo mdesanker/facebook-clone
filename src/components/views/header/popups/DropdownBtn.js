@@ -38,6 +38,7 @@ const BtnWrapper = styled.button`
   padding: 0 10px;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 
   &:hover {
     background-color: #f5f5f5;

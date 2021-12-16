@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Card from "../../../elements/Card";
 import RoundBtn from "../../../elements/RoundBtn";
@@ -7,6 +8,7 @@ import DropdownBtn from "./DropdownBtn";
 
 import { signOut } from "firebase/auth";
 import { auth } from "../../../../config/firebase";
+import ProfileBtn from "./ProfileBtn";
 
 const OptionsMenu = () => {
   const dropdownRef = useRef();
@@ -34,7 +36,7 @@ const OptionsMenu = () => {
   }, [isVisible]);
 
   return (
-    <OptionsContainer>
+    <Fragment>
       <RoundBtn
         icon="down"
         gray
@@ -48,7 +50,7 @@ const OptionsMenu = () => {
           </div>,
           document.querySelector("#modal")
         )}
-    </OptionsContainer>
+    </Fragment>
   );
 };
 
@@ -70,13 +72,18 @@ const DropDown = ({ onSelect }) => {
       padding="8px"
       custom="position: absolute; top: 65px; right: 10px; z=index: 500;"
     >
+      <SectionWrapper>
+        <ProfileBtn />
+      </SectionWrapper>
       <DropdownBtn onClick={logOutHandler} text="Log Out" icon="exit" />
     </Card>
   );
 };
 
-const OptionsContainer = styled.div`
-  // z-index: 100;
+const SectionWrapper = styled.div`
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
 `;
 
 export default OptionsMenu;
