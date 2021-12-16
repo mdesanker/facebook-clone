@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CommonBtn from "../../../elements/CommonBtn";
 
 const ProfileHeader = () => {
   return (
@@ -11,8 +12,8 @@ const ProfileHeader = () => {
             <h3>214 Friends</h3>
           </div>
           <div>
-            <button>Add to story</button>
-            <button>Edit profile</button>
+            <CommonBtn text="Add to story" icon="plus" primary />
+            <CommonBtn text="Edit profile" icon="pencil" />
           </div>
         </NamePlate>
       </Container>
@@ -36,10 +37,11 @@ const NamePlate = styled.div`
 
   & div:nth-child(2) {
     flex-grow: 1;
-    padding: 20px;
+    padding-bottom: 30px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    gap: 10px;
   }
 `;
 
