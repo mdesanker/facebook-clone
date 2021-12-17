@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Header from "../header/Header";
 import ProfileContent from "./profileContent/profileContent";
 import ProfileHeader from "./profileHeader/ProfileHeader";
-import { Routes, Route } from "react-router-dom";
 
 const Profile = () => {
   return (
@@ -11,9 +10,7 @@ const Profile = () => {
       <Header />
       <ProfileWrapper>
         <ProfileHeader />
-        <Routes>
-          <Route to="/profile" element={<ProfileContent />} />
-        </Routes>
+        <ProfileContent />
       </ProfileWrapper>
     </Fragment>
   );
