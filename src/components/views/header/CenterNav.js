@@ -4,16 +4,16 @@ import { NavLink } from "react-router-dom";
 const CenterNav = () => {
   return (
     <CenterNavWrapper>
-      <StyledLink to="/" activeClassName="active">
+      <StyledLink to="/">
         <i className="fas fa-home" />
       </StyledLink>
-      <StyledLink to="/watch" activeClassName="active">
+      <StyledLink to="/watch">
         <i className="fas fa-tv" />
       </StyledLink>
-      <StyledLink to="/market" activeClassName="active">
+      <StyledLink to="/market">
         <i className="fas fa-store" />
       </StyledLink>
-      <StyledLink to="/groups" activeClassName="active">
+      <StyledLink to="/groups">
         <i className="fas fa-users" />
       </StyledLink>
     </CenterNavWrapper>

@@ -26,6 +26,7 @@ const BtnWrapper = styled.button`
   padding: 10px;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 
   ${(props) =>
     props.primary &&

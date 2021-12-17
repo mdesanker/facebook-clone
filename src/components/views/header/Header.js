@@ -55,6 +55,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 `;
 
 export default Header;
