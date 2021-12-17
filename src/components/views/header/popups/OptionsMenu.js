@@ -79,7 +79,7 @@ const DropDown = ({ onSelect, onProfile }) => {
     <Card
       width="360px"
       padding="8px"
-      custom="position: fixed; top: 65px; right: 10px; z-index: 500;"
+      custom="position: fixed; top: 55px; right: 10px; z-index: 500;"
     >
       <SectionWrapper>
         <ProfileBtn onClick={onProfile} />

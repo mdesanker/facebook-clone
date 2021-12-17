@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import NewPost from "../../home/newPost/NewPost";
+import IntroCard from "./IntroCard";
 
 const ProfileContent = () => {
   return (
     <Wrapper>
-      <LeftColumn></LeftColumn>
+      <LeftColumn>
+        <IntroCard />
+      </LeftColumn>
       <RightColumn>
         <NewPost />
       </RightColumn>
@@ -18,12 +21,12 @@ const LeftColumn = styled.div``;
 
 const Wrapper = styled.section`
   width: 100%;
-  max-width: 892px;
+  max-width: 910px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 15px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
 
 export default ProfileContent;

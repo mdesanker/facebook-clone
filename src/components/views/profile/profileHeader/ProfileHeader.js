@@ -79,13 +79,12 @@ const Container = styled.div`
   width: 100%;
   max-width: 970px;
   margin: 0 auto;
-  // background-color: white;
 `;
 
 const Wrapper = styled.section`
   width: 100%;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 `;
 
 export default ProfileHeader;
