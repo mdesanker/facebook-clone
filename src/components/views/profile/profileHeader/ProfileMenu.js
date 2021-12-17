@@ -5,29 +5,19 @@ const ProfileMenu = () => {
   return (
     <MenuWrapper>
       <li>
-        <StyledLink activeClassName="active" to="/profile/posts">
-          Posts
-        </StyledLink>
+        <ActiveLink to="/profile">Posts</ActiveLink>
       </li>
       <li>
-        <StyledLink activeClassName="active" to="/profile/about">
-          About
-        </StyledLink>
+        <StyledLink to="/profile">About</StyledLink>
       </li>
       <li>
-        <StyledLink activeClassName="active" to="/profile/friends">
-          Friends
-        </StyledLink>
+        <StyledLink to="/profile">Friends</StyledLink>
       </li>
       <li>
-        <StyledLink activeClassName="active" to="/profile/photos">
-          Photos
-        </StyledLink>
+        <StyledLink to="/profile">Photos</StyledLink>
       </li>
       <li>
-        <StyledLink activeClassName="active" to="/profile/videos">
-          Videos
-        </StyledLink>
+        <StyledLink to="/profile">Videos</StyledLink>
       </li>
     </MenuWrapper>
   );
@@ -49,9 +39,17 @@ const StyledLink = styled(NavLink)`
     border-radius: 15px;
     border: 3px solid white;
   }
+`;
 
+const ActiveLink = styled(StyledLink)`
   &.active {
     color: ${({ theme }) => theme.colors.primary};
+    border-bottom: 3px solid ${({ theme }) => theme.colors.primary};
+  }
+
+  &.active:hover {
+    background-color: white;
+    border-radius: 0px;
     border-bottom: 3px solid ${({ theme }) => theme.colors.primary};
   }
 `;
