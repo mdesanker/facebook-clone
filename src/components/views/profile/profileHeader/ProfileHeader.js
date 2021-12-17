@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CommonBtn from "../../../elements/CommonBtn";
 import Background from "../../../../images/background.jpg";
+import ProfileMenu from "./ProfileMenu";
 
 const ProfileHeader = () => {
   return (
@@ -18,6 +19,7 @@ const ProfileHeader = () => {
             <CommonBtn text="Edit profile" icon="pencil" />
           </div>
         </NamePlate>
+        <ProfileMenu />
       </Container>
     </Wrapper>
   );
@@ -77,11 +79,13 @@ const Container = styled.div`
   width: 100%;
   max-width: 970px;
   margin: 0 auto;
-  background-color: white;
+  // background-color: white;
 `;
 
 const Wrapper = styled.section`
   width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 `;
 
 export default ProfileHeader;
