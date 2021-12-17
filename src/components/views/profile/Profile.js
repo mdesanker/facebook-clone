@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import styled from "styled-components";
 import Header from "../header/Header";
-import ProfileContent from "./profileContent/profileContent";
+import ProfileContent from "./profileContent/ProfileContent";
 import ProfileHeader from "./profileHeader/ProfileHeader";
 
 const Profile = () => {
