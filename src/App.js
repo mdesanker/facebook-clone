@@ -1,8 +1,13 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import Home from "./components/views/home/Home";
 import Login from "./components/views/Login";
 import GlobalStyles from "./themes/GlobalStyles";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase";
@@ -14,6 +19,7 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import Profile from "./components/views/profile/Profile";
 
 function App() {
+  const navigate = useNavigate();
   const user = useSelector((state) => state.auth.value);
   console.log("user from state", user);
 
@@ -24,6 +30,7 @@ function App() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatch(saveUser(user.refreshToken));
+        navigate("/");
       } else {
         dispatch(saveUser(undefined));
       }
@@ -31,17 +38,16 @@ function App() {
   }, [auth, dispatch]);
 
   return (
-    <Router>
+    <Fragment>
       <GlobalStyles />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<ProtectedRoute />}>
           <Route path="/" element={<Home />} />
           <Route path="/profile/*" element={<Profile />} />
         </Route>
+        <Route path="/login" element={<Login />} />
       </Routes>
-    </Router>
+    </Fragment>
   );
 }
 
