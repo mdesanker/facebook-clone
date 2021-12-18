@@ -11,22 +11,25 @@ import { addUser } from "../../store/usersSlice";
 
 const SignUpModal = ({ onClose }) => {
   const dispatch = useDispatch();
-  const [newUser, setNewUser] = useState({});
+  const [user, setUser] = useState({});
 
   const inputChangeHandler = (e) => {
     const { name, value } = e.target;
-    setNewUser((prevState) => {
+    setUser((prevState) => {
       return { ...prevState, [name]: value };
     });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(newUser.email);
+    console.log(user.email);
 
+    const first = document.querySelector("#first");
+    const last = document.querySelector("#last");
     const email = document.querySelector("#email");
     const password = document.querySelector("#password");
-    const first = document.querySelector("#first");
+    const birthday = document.querySelector("#birthday");
+    const gender = document.querySelector(`input[name="gender"]:checked`);
 
     createUserWithEmailAndPassword(auth, email.value, password.value)
       .then((cred) => {
@@ -36,6 +39,11 @@ const SignUpModal = ({ onClose }) => {
           addUser({
             id: user.uid,
             first: first.value,
+            last: last.value,
+            email: email.value,
+            password: password.value,
+            birthday: birthday.value,
+            gender: gender.value,
           })
         );
         onClose();
@@ -66,7 +74,7 @@ const SignUpModal = ({ onClose }) => {
                 name="first"
                 placeholder="First name"
                 required
-                // onChange={inputChangeHandler}
+                onChange={inputChangeHandler}
               />
               <input
                 type="text"
@@ -74,7 +82,7 @@ const SignUpModal = ({ onClose }) => {
                 name="last"
                 placeholder="Last name"
                 required
-                // onChange={inputChangeHandler}
+                onChange={inputChangeHandler}
               />
             </div>
             <input
@@ -83,7 +91,7 @@ const SignUpModal = ({ onClose }) => {
               name="email"
               placeholder="Email"
               required
-              // onChange={inputChangeHandler}
+              onChange={inputChangeHandler}
             />
             <input
               type="password"
@@ -91,7 +99,7 @@ const SignUpModal = ({ onClose }) => {
               name="password"
               placeholder="Password"
               required
-              // onChange={inputChangeHandler}
+              onChange={inputChangeHandler}
             />
           </TextInput>
           <BirthdayInput>
@@ -105,7 +113,7 @@ const SignUpModal = ({ onClose }) => {
               type="date"
               id="birthday"
               name="birthday"
-              // onChange={inputChangeHandler}
+              onChange={inputChangeHandler}
             />
           </BirthdayInput>
           <GenderInput>
@@ -123,7 +131,7 @@ const SignUpModal = ({ onClose }) => {
                   id="female"
                   name="gender"
                   value="female"
-                  // onChange={inputChangeHandler}
+                  onChange={inputChangeHandler}
                 />
               </div>
               <div>
@@ -133,7 +141,7 @@ const SignUpModal = ({ onClose }) => {
                   id="male"
                   name="gender"
                   value="male"
-                  // onChange={inputChangeHandler}
+                  onChange={inputChangeHandler}
                 />
               </div>
               <div>
@@ -143,7 +151,7 @@ const SignUpModal = ({ onClose }) => {
                   id="custom"
                   name="gender"
                   value="custom"
-                  // onChange={inputChangeHandler}
+                  onChange={inputChangeHandler}
                 />
               </div>
             </RadioWrapper>
