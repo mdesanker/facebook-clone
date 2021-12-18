@@ -2,16 +2,11 @@ import React, { Fragment, useEffect } from "react";
 import Home from "./components/views/home/Home";
 import Login from "./components/views/Login";
 import GlobalStyles from "./themes/GlobalStyles";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { saveUser } from "./store/authSlice";
 
@@ -20,7 +15,7 @@ import Profile from "./components/views/profile/Profile";
 
 function App() {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.auth.value);
+  // const user = useSelector((state) => state.auth.value);
   // console.log("user from state", user);
 
   const dispatch = useDispatch();

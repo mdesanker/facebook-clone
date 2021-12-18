@@ -7,13 +7,13 @@ import { useSelector } from "react-redux";
 const NewPost = () => {
   const userId = useSelector((state) => state.auth.value);
 
-  console.log(userId);
+  // console.log(userId);
 
   const userData = useSelector((state) => state.users.users).find(
     (user) => user.id === userId
   );
 
-  console.log(userData);
+  // console.log(userData);
 
   return (
     <Card width="500px" padding="12px 16px 10px" feed>

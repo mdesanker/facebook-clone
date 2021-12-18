@@ -7,7 +7,7 @@ const PostHeader = () => {
     <Wrapper>
       <ProfileIcon />
       <HeaderText>
-        <h3>Michael Desanker</h3>
+        <h3>Michael Creator</h3>
         <p>
           1h &#183; &nbsp;
           <i className="fas fa-globe-americas" />

@@ -25,7 +25,7 @@ const Signin = ({ onClickCreateNewAccount }) => {
       loginCredentials.password
     )
       .then((cred) => {
-        const user = cred.user;
+        // const user = cred.user;
         // console.log("user logged in", user);
       })
       .catch((error) => {
