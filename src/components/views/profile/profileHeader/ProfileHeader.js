@@ -2,8 +2,15 @@ import styled from "styled-components";
 import CommonBtn from "../../../elements/CommonBtn";
 import Background from "../../../../images/background.jpg";
 import ProfileMenu from "./ProfileMenu";
+import { useSelector } from "react-redux";
 
 const ProfileHeader = () => {
+  const userId = useSelector((state) => state.auth.value);
+
+  const userData = useSelector((state) => state.users.users).find(
+    (user) => user.id === userId
+  );
+
   return (
     <Wrapper>
       <Container>
@@ -11,7 +18,7 @@ const ProfileHeader = () => {
         <ProfilePic />
         <NamePlate>
           <div>
-            <h1>Michael Desanker</h1>
+            <h1>{userData && `${userData.first} ${userData.last}`}</h1>
             <h3>214 Friends</h3>
           </div>
           <div>
