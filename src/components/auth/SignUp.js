@@ -6,8 +6,11 @@ import styled from "styled-components";
 import Button from "../elements/Button";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../store/usersSlice";
 
 const SignUpModal = ({ onClose }) => {
+  const dispatch = useDispatch();
   const [newUser, setNewUser] = useState({});
 
   const inputChangeHandler = (e) => {
@@ -21,9 +24,20 @@ const SignUpModal = ({ onClose }) => {
     e.preventDefault();
     console.log(newUser.email);
 
-    createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    const first = document.querySelector("#first");
+
+    createUserWithEmailAndPassword(auth, email.value, password.value)
       .then((cred) => {
-        console.log("user created: ", cred.user);
+        const user = cred.user;
+        console.log("user created: ", user);
+        dispatch(
+          addUser({
+            id: user.uid,
+            first: first.value,
+          })
+        );
         onClose();
       })
       .catch((error) => {
@@ -52,7 +66,7 @@ const SignUpModal = ({ onClose }) => {
                 name="first"
                 placeholder="First name"
                 required
-                onChange={inputChangeHandler}
+                // onChange={inputChangeHandler}
               />
               <input
                 type="text"
@@ -60,7 +74,7 @@ const SignUpModal = ({ onClose }) => {
                 name="last"
                 placeholder="Last name"
                 required
-                onChange={inputChangeHandler}
+                // onChange={inputChangeHandler}
               />
             </div>
             <input
@@ -69,7 +83,7 @@ const SignUpModal = ({ onClose }) => {
               name="email"
               placeholder="Email"
               required
-              onChange={inputChangeHandler}
+              // onChange={inputChangeHandler}
             />
             <input
               type="password"
@@ -77,7 +91,7 @@ const SignUpModal = ({ onClose }) => {
               name="password"
               placeholder="Password"
               required
-              onChange={inputChangeHandler}
+              // onChange={inputChangeHandler}
             />
           </TextInput>
           <BirthdayInput>
@@ -91,7 +105,7 @@ const SignUpModal = ({ onClose }) => {
               type="date"
               id="birthday"
               name="birthday"
-              onChange={inputChangeHandler}
+              // onChange={inputChangeHandler}
             />
           </BirthdayInput>
           <GenderInput>
@@ -109,7 +123,7 @@ const SignUpModal = ({ onClose }) => {
                   id="female"
                   name="gender"
                   value="female"
-                  onChange={inputChangeHandler}
+                  // onChange={inputChangeHandler}
                 />
               </div>
               <div>
@@ -119,7 +133,7 @@ const SignUpModal = ({ onClose }) => {
                   id="male"
                   name="gender"
                   value="male"
-                  onChange={inputChangeHandler}
+                  // onChange={inputChangeHandler}
                 />
               </div>
               <div>
@@ -129,7 +143,7 @@ const SignUpModal = ({ onClose }) => {
                   id="custom"
                   name="gender"
                   value="custom"
-                  onChange={inputChangeHandler}
+                  // onChange={inputChangeHandler}
                 />
               </div>
             </RadioWrapper>

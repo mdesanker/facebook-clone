@@ -1,10 +1,14 @@
 import { Fragment } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Header from "../header/Header";
 import NewPost from "./newPost/NewPost";
 import Post from "./post/Post";
 
 const Home = () => {
+  const users = useSelector((state) => state.users.users);
+  console.log(users);
+
   return (
     <Fragment>
       <Header />

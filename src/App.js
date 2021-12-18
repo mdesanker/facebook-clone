@@ -21,7 +21,7 @@ import Profile from "./components/views/profile/Profile";
 function App() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.value);
-  console.log("user from state", user);
+  // console.log("user from state", user);
 
   const dispatch = useDispatch();
 
@@ -29,7 +29,8 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        dispatch(saveUser(user.refreshToken));
+        dispatch(saveUser(user.uid));
+        console.log("User object", user);
         navigate("/");
       } else {
         dispatch(saveUser(undefined));
