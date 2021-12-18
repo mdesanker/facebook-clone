@@ -1,11 +1,18 @@
 import styled from "styled-components";
 import ProfileIcon from "../../elements/ProfileIcon";
+import { useSelector } from "react-redux";
 
 const ProfileTab = () => {
+  const userId = useSelector((state) => state.auth.value);
+
+  const userData = useSelector((state) => state.users.users).find(
+    (user) => user.id === userId
+  );
+
   return (
     <TabWrapper>
       <ProfileIcon size="28px" />
-      Michael
+      {userData && userData.first}
     </TabWrapper>
   );
 };

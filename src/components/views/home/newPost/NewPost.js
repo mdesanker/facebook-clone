@@ -2,13 +2,26 @@ import styled from "styled-components";
 import Card from "../../../elements/Card";
 import ProfileIcon from "../../../elements/ProfileIcon";
 import ContentBtn from "../../../elements/ContentBtn";
+import { useSelector } from "react-redux";
 
 const NewPost = () => {
+  const userId = useSelector((state) => state.auth.value);
+
+  console.log(userId);
+
+  const userData = useSelector((state) => state.users.users).find(
+    (user) => user.id === userId
+  );
+
+  console.log(userData);
+
   return (
     <Card width="500px" padding="12px 16px 10px" feed>
       <TopContainer>
         <ProfileIcon />
-        <NewPostButton>What's on your mind, Michael?</NewPostButton>
+        <NewPostButton>
+          What's on your mind, {userData && userData.first}?
+        </NewPostButton>
       </TopContainer>
       <BottomContainer>
         <ContentBtn color="rgb(243, 66, 95)">

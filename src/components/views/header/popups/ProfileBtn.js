@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import ProfileIcon from "../../../elements/ProfileIcon";
+import { useSelector } from "react-redux";
 
 const ProfileBtn = ({ onClick }) => {
+  const userId = useSelector((state) => state.auth.value);
+
+  const userData = useSelector((state) => state.users.users).find(
+    (user) => user.id === userId
+  );
+
   return (
     <BtnWrapper onClick={onClick}>
       <ProfileIcon size="60px" />
       <TextWrapper>
-        <h3>Michael Desanker</h3>
+        <h3>{userData && `${userData.first} ${userData.last}`}</h3>
         <p>See your profile</p>
       </TextWrapper>
     </BtnWrapper>
